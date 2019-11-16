@@ -2,7 +2,6 @@ import json
 import os
 import google_auth_oauthlib.flow
 from googleapiclient.discovery import *
-from datetime import datetime
 import googleapiclient.errors
 
 scopes = ["https://www.googleapis.com/auth/youtube",
@@ -90,11 +89,12 @@ def youtube_search_video(channelID, max_results=5):
 def youtube_search_channel(channelID):
     youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION,developerKey=DEVELOPER_KEY)
     channelStatistics = youtube.channels().list(
-                    part='id, statistics', id=channelID).execute()
+                    part='id, snippet, statistics', id=channelID).execute()
     channelStatistics = channelStatistics["items"][0] 
     
     channel = {}
     channel["id"] = channelID
+    channel["title"] = channelStatistics["snippet"]["title"]
     channel["channelViews"] = channelStatistics["statistics"]["viewCount"]
     channel["channelSubscriber"] = channelStatistics["statistics"]["subscriberCount"]
     channel["channelVideoCount"] = channelStatistics["statistics"]["videoCount"]
