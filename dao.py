@@ -2,7 +2,7 @@ import pymysql
 
 def insertChannel(id_channel, name, subscriber_count, video_count, views_count, date_get):
     try:
-        con = pymysql.connect(host="localhost", db="cover_analitycs", user="ribolive", password="6428")
+        con = pymysql.connect(host="ribo.live", db="cover_analitycs", user="ribolive", password="6428")
 
         cursor = con.cursor()
         sql =  "INSERT INTO channel "
@@ -18,7 +18,7 @@ def insertChannel(id_channel, name, subscriber_count, video_count, views_count, 
 
 def insertVideo(id_video, id_channel, view_count, like_count, comment_count, date_get, dislike_count):
     try:
-        con = pymysql.connect(host="localhost", db="cover_analitycs", user="root", password="6428")
+        con = pymysql.connect(host="ribo.live", db="cover_analitycs", user="ribolive", password="6428")
         
         cursor = con.cursor()
         sql =  "INSERT INTO videos "
