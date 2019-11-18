@@ -15,7 +15,7 @@ def video_parser(video):
 
 if __name__ == "__main__":
     i = 0
-    while (i != 1):
+    while (True):
         i += 1
         channelList = [
             "UCgc00bfF_PvO_2AvqJZHXFg",
@@ -45,6 +45,6 @@ if __name__ == "__main__":
                 insertVideo(item["vidId"], item["channelId"], item["viewCount"], item["likeCount"], item["commentCount"], item["time"], item["dislikeCount"])
             
         print("----------  ", i, "  ----------")
-        time.sleep(5)
+        time.sleep(3600)
 
 
