@@ -1,5 +1,6 @@
 from youtubeAPI import *
 from datetime import datetime
+import logging
 import time
 from dao import *
 
@@ -14,6 +15,8 @@ def video_parser(video):
     return videoOut
 
 if __name__ == "__main__":
+    logging.config.fileConfig(fname='log.conf', defaults={'logfilename': "log"})
+    logger = logging.getLogger("log.txt")
     i = 0
     while (True):
         i += 1
@@ -39,12 +42,12 @@ if __name__ == "__main__":
                 
             channel["date_get"] = datetime.now()
             insertChannel(channel['id'], channel['title'], channel['channelSubscriber'], channel['channelVideoCount'], channel['channelViews'], channel["date_get"])
-            print("Insert Channel: {0} ({1})".format(channel['title'], channel["date_get"]))
+            logger.info("Insert Channel: {0} ({1})".format(channel['title'], channel["date_get"])))
 
             for item in new_videos:
                 insertVideo(item["vidId"], item["channelId"], item["viewCount"], item["likeCount"], item["commentCount"], item["time"], item["dislikeCount"])
             
-        print("----------  ", i, "  ----------")
+        logger.info("----------  ", i, "  ----------")
         time.sleep(3600)
 
 
