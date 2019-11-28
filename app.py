@@ -3,6 +3,8 @@ from datetime import datetime
 import time
 from dao import *
 
+TIMESLEEP = 3600 * 8
+
 def video_parser(video): 
     relevantInfo = ["vidId", "viewCount", "likeCount", "dislikeCount", "commentCount", "channelId"]
 
@@ -51,7 +53,7 @@ def get_data():
         mFile.write("----------  " + str(i) + "  ----------\n")
         mFile.close()
 
-        time.sleep(3600 * 8)
+        time.sleep(TIMESLEEP)
 
 
 if __name__ == "__main__":
@@ -61,7 +63,7 @@ if __name__ == "__main__":
         mFile  = open("log.txt", "a") 
         mFile.write("----------  Get ERROR, Restart Count  ----------\n")
         mFile.close()
-        time.sleep(3600 * 8)
+        time.sleep(TIMESLEEP)
         get_data()
 
 
