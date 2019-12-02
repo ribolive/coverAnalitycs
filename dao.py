@@ -1,19 +1,15 @@
 import pymysql
+from domain import Video
 
+HOST = "ribo.live"
+DB = "cover_analitycs"
+USER =  "ribolive"
+PASSWORD = "6428"
 
-class Video:
-    def __init__(self, id, id_video, id_channel, view_count, like_count, comment_count, date_get, dislike_count):
-        self.id_video = id_video  
-        self.id_channel = id_channel  
-        self.view_count = view_count  
-        self.like_count = like_count  
-        self.comment_count = comment_count  
-        self.date_get = date_get  
-        self.dislike_count = dislike_count
 
 def insertChannel(id_channel, name, subscriber_count, video_count, views_count, date_get):
     try:
-        con = pymysql.connect(host="ribo.live", db="cover_analitycs", user="ribolive", password="6428")
+        con = pymysql.connect(host = HOST, db = DB, user = USER, password = PASSWORD)
 
         cursor = con.cursor()
         sql =  "INSERT INTO channel "
@@ -29,7 +25,7 @@ def insertChannel(id_channel, name, subscriber_count, video_count, views_count, 
 
 def insertVideo(id_video, id_channel, view_count, like_count, comment_count, date_get, dislike_count):
     try:
-        con = pymysql.connect(host="ribo.live", db="cover_analitycs", user="ribolive", password="6428")
+        con = pymysql.connect(host = HOST, db = DB, user = USER, password = PASSWORD)
         
         cursor = con.cursor()
         sql =  "INSERT INTO videos "
@@ -45,7 +41,8 @@ def insertVideo(id_video, id_channel, view_count, like_count, comment_count, dat
 
 def getVideos():
     try:
-        con = pymysql.connect(host="159.203.102.25", db="cover_analitycs", user="ribolive", password="6428")
+        # con = pymysql.connect(host="localhost", db=DB, user="root", password = PASSWORD)
+        con = pymysql.connect(host = HOST, db=DB, user= USER, password = PASSWORD)
         
         cursor = con.cursor()
         sql =  "SELECT * FROM videos"
@@ -60,12 +57,12 @@ def getVideos():
         return outVideos
 
     except NameError:
-        print("Error")
+        print("Error in GetVideos")
         return None
 
 def getChannels():
     try:
-        con = pymysql.connect(host="159.203.102.25", db="cover_analitycs", user="ribolive", password="6428")
+        con = pymysql.connect(host="159.203.102.25", db=DB, user= USER, password = PASSWORD)
         
         cursor = con.cursor()
         sql =  "SELECT * FROM chennel"
@@ -77,5 +74,5 @@ def getChannels():
         return channels
 
     except NameError:
-        print("Error")
+        print("Error in GetVChannels")
         return channels
