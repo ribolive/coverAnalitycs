@@ -62,10 +62,10 @@ def getVideos():
 
 def getChannels():
     try:
-        con = pymysql.connect(host="159.203.102.25", db=DB, user= USER, password = PASSWORD)
+        con = pymysql.connect(host = HOST, db=DB, user= USER, password = PASSWORD)
         
         cursor = con.cursor()
-        sql =  "SELECT * FROM chennel"
+        sql =  "SELECT * FROM channel"
 
         cursor.execute(sql)
         channels = cursor.fetchall()
