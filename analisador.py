@@ -103,7 +103,6 @@ def preProccess(videos):
 
     ####
     videos = getVideosByDiferenceBetweenThem(videos, horizon)
-    pickle.dump(videos, open("rawData.pkl","wb"))
     print("aqui")
 
 
@@ -112,5 +111,7 @@ if __name__ == "__main__":
         videos = dao.getVideos()
         #channels = dao.getChannels()
         preProccess(videos)
+
+        pickle.dump(videos, open("rawData.pkl","wb"))
     except NameError:
         print("Error in Main Function")

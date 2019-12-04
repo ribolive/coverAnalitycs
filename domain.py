@@ -10,3 +10,8 @@ class Video:
         self.date_get = date_get  
         self.dislike_count = dislike_count
 
+    def __str__(self):
+        strOut = ""
+        strOut += str(self.id_channel)  
+        strOut += str(self.id_video)
+        return strOut
