@@ -1,6 +1,7 @@
 import dao
 import datetime
 from domain import Video
+import pickle
 
 def getVideoByChannelAndPeriod(videos):
     videosDict = {}
@@ -80,13 +81,13 @@ def getVideosByDiferenceBetweenThem(videos,horizon):
                     else:
                         while (not lastDataTime in values):
                             lastDataTime -= datetime.timedelta(days=1)
-                        averageComment = (values[currentDay].comment_count - values[lastDataTime].comment_count)
-                        averageDislike = (values[currentDay].dislike_count - values[lastDataTime].dislike_count)
-                        averageLike = (values[currentDay].like_count - values[lastDataTime].like_count)
-                        averageViews = (values[currentDay].view_count - values[lastDataTime].view_count)
+                        diferenceComment = (values[currentDay].comment_count - values[lastDataTime].comment_count)
+                        diferenceDislike = (values[currentDay].dislike_count - values[lastDataTime].dislike_count)
+                        diferenceLike = (values[currentDay].like_count - values[lastDataTime].like_count)
+                        diferenceViews = (values[currentDay].view_count - values[lastDataTime].view_count)
 
 
-                        differenceBetweenDays[currentDay] = Video(None, values[currentDay].id_video, values[currentDay].id_channel, averageViews, averageLike, averageComment, lastDataTime, averageDislike)
+                        differenceBetweenDays[currentDay] = Video(None, values[currentDay].id_video, values[currentDay].id_channel, diferenceViews, diferenceLike, diferenceComment, currentDay, diferenceDislike)
 
                     # proxima iteração do while
                 iterateDate += datetime.timedelta(days=1)  
@@ -102,7 +103,7 @@ def preProccess(videos):
 
     ####
     videos = getVideosByDiferenceBetweenThem(videos, horizon)
-
+    pickle.dump(videos, open("rawData.pkl","wb"))
     print("aqui")
 
 
