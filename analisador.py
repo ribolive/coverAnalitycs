@@ -57,7 +57,8 @@ def transformVideosByAvarage(videos):
 
                 # media dos dados capturados em um mesmo dia
                 for key in averages:
-                    averages[key] = averages[key] / amountVideosGet 
+                    media = averages[key] / amountVideosGet
+                    averages[key] = media
 
                 videos[channelKey][videoID][period] = Video(None, videoID, id_channel, averages["qViews"], averages["qLike"], averages["qComment"], period, averages["qDislike"])
     return videos
@@ -90,7 +91,8 @@ def getVideosByDiferenceBetweenThem(videos,horizon):
                         differenceBetweenDays[currentDay] = Video(None, values[currentDay].id_video, values[currentDay].id_channel, diferenceViews, diferenceLike, diferenceComment, currentDay, diferenceDislike)
 
                     # proxima iteração do while
-                iterateDate += datetime.timedelta(days=1)  
+                iterateDate += datet
+                ime.timedelta(days=1)  
             videos[channelKey][videoID] = differenceBetweenDays
     return videos
 
@@ -103,15 +105,26 @@ def preProccess(videos):
 
     ####
     videos = getVideosByDiferenceBetweenThem(videos, horizon)
-    print("aqui")
-
+    return videos
 
 if __name__ == "__main__":
     try:
-        videos = dao.getVideos()
-        #channels = dao.getChannels()
-        preProccess(videos)
+        #videos = dao.getVideos()
+        channels = dao.getChannels()
+        sChannels = {}
+        for value in channels:
+            key = 0
+            keySubscribe = 1
+            if not key in sChannels:
+                sChannels[value[key]] = value[keySubscribe]
+            else:
+                if sChannels[value[key]] < value[keySubscribe]:
+                    sChannels[value[key]] = value[keySubscribe]
+        #videos = preProccess(videos)
 
-        pickle.dump(videos, open("rawData.pkl","wb"))
+        #pickle.dump(videos, open("rawData.pkl","wb"))
+        pickle.dump(sChannels, open("channelSubscribe.pkl","wb"))
+
+        print("aqui")
     except NameError:
         print("Error in Main Function")

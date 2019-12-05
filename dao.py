@@ -65,7 +65,7 @@ def getChannels():
         con = pymysql.connect(host = HOST, db=DB, user= USER, password = PASSWORD)
         
         cursor = con.cursor()
-        sql =  "SELECT * FROM channel"
+        sql =  "SELECT id_channel, subscriber_count FROM channel"
 
         cursor.execute(sql)
         channels = cursor.fetchall()
