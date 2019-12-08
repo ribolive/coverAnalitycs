@@ -105,25 +105,30 @@ def preProccess(videos):
 
     ####
     videos = getVideosByDiferenceBetweenThem(videos, horizon)
-    return videos
+    
+    sChannels = {}
+    for value in channels:
+        key = 0
+        keySubscribe = 1
+        if not key in sChannels:
+            sChannels[value[key]] = value[keySubscribe]
+        else:
+            if sChannels[value[key]] < value[keySubscribe]:
+                sChannels[value[key]] = value[keySubscribe]
+    
+    return videos, sChannels
+
+
 
 if __name__ == "__main__":
     try:
-        #videos = dao.getVideos()
+        videos = dao.getVideos()
         channels = dao.getChannels()
-        sChannels = {}
-        for value in channels:
-            key = 0
-            keySubscribe = 1
-            if not key in sChannels:
-                sChannels[value[key]] = value[keySubscribe]
-            else:
-                if sChannels[value[key]] < value[keySubscribe]:
-                    sChannels[value[key]] = value[keySubscribe]
-        #videos = preProccess(videos)
+        
+        videos, channels = preProccess(videos, channels)
 
-        #pickle.dump(videos, open("rawData.pkl","wb"))
-        pickle.dump(sChannels, open("channelSubscribe.pkl","wb"))
+        pickle.dump(videos, open("rawData.pkl","wb"))
+        pickle.dump(channels, open("channelSubscribe.pkl","wb"))
 
         print("aqui")
     except NameError:

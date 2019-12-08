@@ -78,7 +78,7 @@
 
 
 
-% ########## Tabela valores para reressão ########3
+% ########## Tabela valores  ########3
 <table border="1" style="width:500px">
 	<caption>
 	<table border="1" cellpadding="1" cellspacing="1" style="width:500px">
@@ -135,3 +135,118 @@
 </table>
 
 
+								
+
+
+% ####### Valores capturados canais ########
+\begin{table}[h]
+ \centering
+% distancia entre a linha e o texto
+ {\renewcommand\arraystretch{1.25}
+ \begin{tabular}{ l l }
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.383cm}|}{Atributo \centering } &
+    \multicolumn{1}{p{4.733cm}|}{Descrição \centering }
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.383cm}|}{ID} &
+    \multicolumn{1}{p{4.733cm}|}{Um código único para representar o canal}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.383cm}|}{Inscritos} &
+    \multicolumn{1}{p{4.733cm}|}{Quantidade de inscritos no canal no momento da captura}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.383cm}|}{Quantidade de vídeos} &
+    \multicolumn{1}{p{4.733cm}|}{Quantidade de vídeos já capturados}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.383cm}|}{Quantidade de visualizações} &
+    \multicolumn{1}{p{4.733cm}|}{Quantidade total de visualizações no canal até o momento}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.383cm}|}{Título} &
+    \multicolumn{1}{p{4.733cm}|}{Identidade (nome) do canal}
+  \\  
+  \hline
+
+ \end{tabular} }
+\end{table}
+
+
+
+
+% ######## informações de um video ########
+\begin{table}[h]
+ \centering
+% distancia entre a linha e o texto
+ {\renewcommand\arraystretch{1.25}
+ \begin{tabular}{ l l }
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{Atributos \centering } &
+    \multicolumn{1}{p{5.133cm}|}{Descrição \centering }
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{ID Vídeo} &
+    \multicolumn{1}{p{5.133cm}|}{Um ID único representando o vídeo}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{ID Canal} &
+    \multicolumn{1}{p{5.133cm}|}{Um ID único representando o canal daquele vídeo}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{ID categoria} &
+    \multicolumn{1}{p{5.133cm}|}{Categoria que aquele video se encaixa}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{Título} &
+    \multicolumn{1}{p{5.133cm}|}{Título do vídeo}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{Quantidade de comentarios} &
+    \multicolumn{1}{p{5.133cm}|}{Quantidade de comentários no momento da captura}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{Descrição} &
+    \multicolumn{1}{p{5.133cm}|}{Descrição presente no vídeo}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{Quantidade de curtidas} &
+    \multicolumn{1}{p{5.133cm}|}{Quantidade de likes no momento da captura}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{Quantidade de 'não curtiu'} &
+    \multicolumn{1}{p{5.133cm}|}{Quantidade de dislike no momento da captura}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{Quantidade de favoritados} &
+    \multicolumn{1}{p{5.133cm}|}{Quantidade de usuários que favoritaram o vídeo}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{Quantidade de visualizações} &
+    \multicolumn{1}{p{5.133cm}|}{Quantidade de visualizações do vídeo}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{Titulo do canal} &
+    \multicolumn{1}{p{5.133cm}|}{Título do canal, que aquele vídeo pertence}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{Linguagem padrão} &
+    \multicolumn{1}{p{5.133cm}|}{Uma linguagem padrão que esta o vídeo}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{Broadcast conteudo ao vivo} &
+    \multicolumn{1}{p{5.133cm}|}{Dados sobre os conteúdo gravado}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{Publicação} &
+    \multicolumn{1}{p{5.133cm}|}{Data da publicação daquele vídeo}
+  \\  
+  \cline{1-1}\cline{2-2}  
+    \multicolumn{1}{|p{3.350cm}|}{Tags} &
+    \multicolumn{1}{p{5.133cm}|}{As tag's presente no vídeo}
+  \\  
+  \hline
+
+ \end{tabular} }
+\end{table}
