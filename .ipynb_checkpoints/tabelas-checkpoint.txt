@@ -1,0 +1,137 @@
+% ######## init table ########
+        \begin{table}[h]
+         \centering
+         \caption{Tabela Propriedades por Canal}
+         \label{tabPropriedadeCanalCaptura}
+        % distancia entre a linha e o texto
+         {\renewcommand\arraystretch{1.25}
+         \begin{tabular}{|p{5 cm}|p{8.0cm}|}
+          \hline  
+            \multicolumn{2}{|c|}{Propriedades por Canal}
+          \\  
+          \hline  
+            kind & O tipo do recurso da API. O valor será youtube\#channel.
+          \\  
+          \hline  
+            etag & A Etag deste recurso.
+          \\  
+          \hline  
+            id &
+            O ID que o YouTube usa para identificar o canal de forma exclusiva.
+          \\  
+          \hline  
+            snippet &
+            objeto snippet contém detalhes básicos sobre o canal, como seu título, sua descrição e suas imagens em miniatura.
+          \\  
+          \hline  
+            snippet.title &
+            O título do canal.
+          \\  
+          \hline  
+            snippet.description &
+            A descrição do canal.
+          \\  
+          \hline  
+            snippet.publishedAt &
+            A data e a hora em que o canal foi criado. O valor é especificado no formato ISO 8601 (YYYY-MM-DDThh:mm:ss.sZ).
+          \\  
+          \hline  
+            contentDetails &
+            O ID da playlist que contém os vídeos enviados do canal. Use o método videos.insert para enviar novos vídeos e o videos.delete para excluir vídeos enviados anteriormente. (método: relatedPlaylists.uploads)
+          \\  
+          \hline  
+            statistics &
+            O objeto statistics encapsula estatísticas para o canal.
+          \\  
+          \hline  
+            statistics.viewCount &
+            Quantidade de visualizações do canal.
+          \\  
+          \hline  
+            statistics.commentCount &
+            Quantidade de comentários do canal.
+          \\  
+          \hline  
+            statistics.subscriberCount &
+            Quantidade de inscritos do canal.
+          \\  
+          \hline  
+            statistics.hiddenSubscriberCount &
+            Indica se a contagem de inscritos do canal é visível publicamente.
+          \\  
+          \hline  
+            statistics.videoCount &
+            Quantidade de vídeos enviados para o canal.
+          \\  
+          \hline  
+            topicDetails &
+            O objeto topicDetails encapsula informações sobre tópicos Freebase associados ao canal.
+          \\  
+          \hline  
+            topicDetails.topicIds[] &
+            A lista de IDs do tópico Freebase associadas ao canal. Você pode recuperar informações sobre cada tópico usando a API de tópicos Freebase.
+          \\  
+          \hline
+        
+         \end{tabular} }
+        \end{table}
+
+
+
+% ########## Tabela valores para reressão ########3
+<table border="1" style="width:500px">
+	<caption>
+	<table border="1" cellpadding="1" cellspacing="1" style="width:500px">
+		<tbody>
+			<tr>
+				<td style="width: 166px; text-align: center;">Atributos</td>
+				<td style="width: 321px; text-align: center;">Descri&ccedil;&atilde;o</td>
+			</tr>
+			<tr>
+				<td style="width: 166px;">Id do v&iacute;deo</td>
+				<td style="width: 321px;">&nbsp;Representa qual v&iacute;deo tem as informa&ccedil;&otilde;es abaixo</td>
+			</tr>
+			<tr>
+				<td style="width: 166px;">M&eacute;dia visualiza&ccedil;&otilde;es</td>
+				<td style="width: 321px;">&nbsp;M&eacute;dia de visualiza&ccedil;&otilde;es</td>
+			</tr>
+			<tr>
+				<td style="width: 166px;">Desvio padr&atilde;o&nbsp;visualiza&ccedil;&otilde;es</td>
+				<td style="width: 321px;">&nbsp;Desvio padr&atilde;o de visualiza&ccedil;&otilde;es</td>
+			</tr>
+			<tr>
+				<td style="width: 166px;">M&eacute;dia like</td>
+				<td style="width: 321px;">&nbsp;M&eacute;dia de like</td>
+			</tr>
+			<tr>
+				<td style="width: 166px;">Desvio padr&atilde;o&nbsp;like</td>
+				<td style="width: 321px;">&nbsp;Desvio padr&atilde;o de like</td>
+			</tr>
+			<tr>
+				<td style="width: 166px;">M&eacute;dia n&atilde;o like</td>
+				<td style="width: 321px;">&nbsp;M&eacute;dia de n&atilde;o like</td>
+			</tr>
+			<tr>
+				<td style="width: 166px;">Desvio padr&atilde;o n&atilde;o like</td>
+				<td style="width: 321px;">&nbsp;Desvio padr&atilde;o de n&atilde;o like</td>
+			</tr>
+			<tr>
+				<td style="width: 166px;">M&eacute;dia coment&aacute;rios</td>
+				<td style="width: 321px;">&nbsp;M&eacute;dia de coment&aacute;rios</td>
+			</tr>
+			<tr>
+				<td style="width: 166px;">Desvio padr&atilde;o coment&aacute;rios</td>
+				<td style="width: 321px;">&nbsp;Desvio padr&atilde;o de coment&aacute;rios</td>
+			</tr>
+			<tr>
+				<td style="width: 166px;">Inscritos no canal</td>
+				<td style="width: 321px;">&nbsp;Quantidade de inscrios no canal (na utlima captura)</td>
+			</tr>
+		</tbody>
+	</table>
+	</caption>
+	<tbody>
+	</tbody>
+</table>
+
+
